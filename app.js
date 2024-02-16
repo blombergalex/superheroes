@@ -1,24 +1,22 @@
 var url = require("url");
 var fs = require("fs");
 
-
-
 const renderHTML = (path, response) => {
     fs.readFile(path, null, function(error,data) { //might replace null with utf8
         if (error) {
             response.writeHead(404);
-            rensponse.write("File not found");
+            response.write("File not found");
         } else {
             response.write(data);
         }
-        rensponse.end();
+        response.end();
     });
 }
 
 const handleRequest = (request, response) => {
     response.writeHead(200, {"Content-Type": "text/html"});
 
-    var path = new URL (request.url).pathname;
+    var path = new URL (request.url, "http://localhost:3000").pathname;
     switch (path) {
         case "/":
             renderHTML("./index.html", response);
@@ -27,8 +25,7 @@ const handleRequest = (request, response) => {
             renderHTML("./about.html", response);
             break;
         default: 
-            response.writeHead(404);
-            response.write("Route not defined");
+            response.write("Oops something went wrong! Route not defined");
             response.end();
     }
 }
@@ -36,15 +33,3 @@ const handleRequest = (request, response) => {
 module.exports = {
     handleRequest
 }
-
-
-// module.exports = {
-//     handleRequest: function(request, response) {
-//         response.writeHead(200, {"Content-Type": "text/html"});
-    
-//         var path = url.parse(request.url).pathname;
-//         switch (path) {
-//             case "/":  
-//         }
-//     }
-// };
