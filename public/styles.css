@@ -73,3 +73,22 @@ nav li {
     margin: 24px;
     height: 80vh;
 }
+
+.main-content > h3 {
+    margin: 8px 0;
+}
+
+.back-button {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--dark-text-color);
+    font-family: inherit;
+    padding: 4px;
+    margin: 16px 0;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: inherit;
+}
