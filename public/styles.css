@@ -1,9 +1,11 @@
 :root {
-    --accent-color: rgb(156, 186, 166);
+    --accent-color: rgb(156, 164, 186);
     --dark-color: rgb(32, 48, 67);
     --dark-text-color: rgb(51, 53, 50);
     --light-background-color:rgb(80, 87, 96);
-    --light-text-color: rgb(226, 227, 226);
+    --page-title-color: rgb(226, 227, 227);
+    --light-text-color: rgb(243, 243, 243);
+
 }
 
 * {
@@ -17,65 +19,83 @@ html {
 }
 
 body {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100%;
     margin: 0;
-    background-color: var(--dark-color);
 }
 
 header {
-    color: var(--light-text-color);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 24px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: var(--page-title-color);
+    text-transform: uppercase;
+    padding: 36px 0 0;
     text-align: center;
 }
 
-nav {
+.main-nav {
+    background-color: #fff;
+    color: var(--dark-text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
     justify-content: center;
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    padding: 6px;
-    margin: 24px 0;
+    margin: 16px 0;
+    padding: 8px 16px;
 }
 
 nav a {
     color: inherit;
-    font-size: 1.2rem;
-    margin: 8px;
     text-decoration: none;
-}
-
-nav a:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-nav li {
-    border-radius: 5px;
-    margin: 4px;
-
-}
-
-.main-nav li {
-    background-color: var(--light-background-color);
-}
-
-.superhero-nav > li {
-    background-color: var(--accent-color);
-    color: var(--dark-text-color);
+    margin: 8px;
 }
 
 .main-content {
-    background-color: var(--light-background-color);
-    font-size: 2var;
+    color: var(--light-text-color);
+    background-color: var(--dark-color);
     padding: 24px;
-    margin: 24px;
-    height: 80vh;
+    min-height: 70vh;
 }
 
 .main-content > h3 {
-    margin: 8px 0;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 8px 10px;
+}
+
+.info-para {
+    padding: 16px 10px;
+}
+
+.superhero-nav {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    list-style: none; 
+    padding: 0; 
+    text-transform: uppercase;
+    flex-wrap: wrap;
+}
+
+.superhero-nav > * {
+    aspect-ratio: 1/1;
+    align-items: center;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: var(--dark-text-color);
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    overflow: scroll;
+    justify-content: center;
+    margin: 10px;
+    width: 115px;
 }
 
 .back-button {
@@ -83,12 +103,25 @@ nav li {
     border: none;
     background-color: var(--accent-color);
     color: var(--dark-text-color);
-    font-family: inherit;
-    padding: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    padding: 8px;
     margin: 16px 0;
+    font-size: 0.8rem;
 }
 
 .back-button a {
     text-decoration: none;
     color: inherit;
+}
+
+@media screen and (max-width: 350px) {
+    .main-nav {
+        font-size: 0.6rem;
+    }
+
+    .grid-container,
+    .back-button {
+        font-size: 0.5rem;
+    }
 }
