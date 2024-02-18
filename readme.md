@@ -1,6 +1,6 @@
 To run superhero-webpage:
 1. Clone project
-2. In terminal, install dependency by running "npm i express"
+2. In terminal, install dependencies by running "npm install"
 3. Start server  by running "node server.js"
 4. Site is now live at localhost:3000
 
