@@ -2,10 +2,8 @@
     --accent-color: rgb(156, 164, 186);
     --dark-color: rgb(32, 48, 67);
     --dark-text-color: rgb(51, 53, 50);
-    --light-background-color:rgb(80, 87, 96);
     --page-title-color: rgb(226, 227, 227);
     --light-text-color: rgb(243, 243, 243);
-
 }
 
 * {
@@ -59,7 +57,7 @@ nav a {
     color: var(--light-text-color);
     background-color: var(--dark-color);
     padding: 24px;
-    min-height: 70vh;
+    min-height: 75vh;
 }
 
 .main-content > h3 {
@@ -106,7 +104,7 @@ nav a {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     padding: 8px;
-    margin: 16px 0;
+    margin: 16px 10px;
     font-size: 0.8rem;
 }
 
